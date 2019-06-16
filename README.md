@@ -1,16 +1,20 @@
 # FileBot-Custom-Format-Expressions
-
-{
+```python
+E:\Filme\{
 	def dottedName = n.space('.')
 	any{"$collection/$y.$dottedName.$vf.$vc"}
 	{
 		def tmpGenre = ""
 		if(genres.contains("Documentary") || genres.contains("Dokumentation")) {
 			tmpGenre = "Doku"
+		}else if(genres.contains("Comedy")) {
+			tmpGenre = "Comedy"
+		}else if(genres.contains("Animation")) {
+			tmpGenre = "Animation"
 		}else if(genres.contains("Action")) {
 			if(genres.contains("Adventure") || genres.contains("Abenteuer")) {
 				tmpGenre = "Action-Adventure"
-			}else if(genres.contains("Comedy") || genres.contains("Komödie")) {
+			}else if(genres.contains("Komödie")) {
 				tmpGenre = "Action-Komödie"
 			}else if(genres.contains("Drama")) {
 				tmpGenre = "Action-Drama"
@@ -39,3 +43,4 @@
 		"Genre/$tmpGenre/$dottedName.$y.$vf.$vc"
 	}
 }
+```
