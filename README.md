@@ -1,6 +1,6 @@
 # FileBot-Custom-Format-Expressions
-```python
-E:\Filme\{
+```javascript
+{
 	def dottedName = n.space('.')
 	any{"$collection/$y.$dottedName.$vf.$vc"}
 	{
